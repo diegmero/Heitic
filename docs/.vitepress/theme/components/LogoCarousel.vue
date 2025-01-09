@@ -47,7 +47,7 @@ const logos = ref([
 
 .carousel-title {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 3.5rem;
   text-align: center;
   color: var(--vp-c-text-1);

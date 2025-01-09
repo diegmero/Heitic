@@ -136,7 +136,7 @@
   .newsletter-form button {
     padding: 0.5rem 1rem;
     background-color: var(--vp-c-brand);
-    color: white;
+    color: var(--vp-c-bg);
     border: none;
     border-radius: 4px;
     cursor: pointer;

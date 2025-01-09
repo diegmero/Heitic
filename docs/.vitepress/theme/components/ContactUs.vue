@@ -1,203 +1,213 @@
 <template>
-    <div class="contact-us">
-      <div class="contact-content">
-        <h2 class="section-title">Conecta con nosotros</h2>
-        <p class="contact-description">Estamos a un clic de distancia. Elige tu método preferido y comencemos a crear algo extraordinario juntos.</p>
-        <div class="contact-methods">
-          <div v-for="method in contactMethods" :key="method.name" class="contact-method">
-
-            <div class="method-info">
-              <h3>{{ method.name }}</h3>
-              <p>{{ method.description }}</p>
-              <a :href="method.link" class="contact-link">{{ method.linkText }} <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="method-icon" :style="{ backgroundColor: method.color }">
-              <i :class="method.icon"></i>
-            </div>
+  <section class="contact-container">
+    <div class="contact-header">
+      <h2 class="title">Conecta con nosotros</h2>
+      <p class="subtitle">¿Listo para comenzar? Elige tu método de contacto preferido</p>
+    </div>
+    
+    <div class="contact-grid">
+      <div v-for="method in contactMethods" 
+           :key="method.name" 
+           class="contact-card"
+           :class="{ 'whatsapp': method.name === 'WhatsApp',
+                    'email': method.name === 'Email',
+                    'phone': method.name === 'Teléfono' }">
+        <div class="card-content">
+          <div class="icon-wrapper">
+            <i :class="method.icon"></i>
           </div>
+          <h3>{{ method.name }}</h3>
+          <p>{{ method.description }}</p>
+          <a :href="method.link" class="contact-button">
+            {{ method.linkText }}
+            <i class="fas fa-chevron-right"></i>
+          </a>
         </div>
       </div>
-      <div class="contact-image"></div>
     </div>
-  </template>
-  
-  <script setup lang="ts">
-  const contactMethods = [
-    {
-      name: 'WhatsApp',
-      icon: 'fab fa-whatsapp',
-      color: '#25D366',
-      description: 'Chatea con nosotros en tiempo real',
-      link: 'https://wa.me/1234567890',
-      linkText: 'Iniciar chat'
-    },
-    {
-      name: 'Email',
-      icon: 'fas fa-envelope',
-      color: '#EA4335',
-      description: 'Escríbenos para consultas detalladas',
-      link: 'mailto:info@heitic.com',
-      linkText: 'Enviar correo'
-    },
-    {
-      name: 'Teléfono',
-      icon: 'fas fa-phone',
-      color: '#4285F4',
-      description: 'Llámanos para atención personalizada',
-      link: 'tel:+1234567890',
-      linkText: 'Llamar ahora'
-    }
-  ]
-  </script>
-  
-  <style scoped>
-  .contact-us {
-    margin-top: 2rem;
-    display: flex;
-    background-color: var(--vp-c-bg-soft);
-    overflow: hidden;
-    border-radius: 1rem;
+  </section>
+</template>
+
+<script setup lang="ts">
+const contactMethods = [
+  {
+    name: 'WhatsApp',
+    icon: 'fab fa-whatsapp',
+    description: 'Respuesta inmediata para tus consultas',
+    link: 'https://wa.me/1234567890',
+    linkText: 'Chatear ahora'
+  },
+  {
+    name: 'Email',
+    icon: 'fas fa-envelope',
+    description: 'Para consultas más detalladas',
+    link: 'mailto:info@heitic.com',
+    linkText: 'Enviar email'
+  },
+  {
+    name: 'Teléfono',
+    icon: 'fas fa-phone',
+    description: 'Atención personalizada directa',
+    link: 'tel:+1234567890',
+    linkText: 'Llamar'
   }
-  
-  .contact-content {
-    flex: 1;
-    padding: 2rem;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--vp-c-text-1);
-  }
-  
-  .contact-description {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-bottom: 3rem;
-    color: var(--vp-c-text-2);
-  }
-  
-  .contact-methods {
+]
+</script>
+
+<style scoped>
+.contact-container {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title{
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--vp-c-text-2);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
+  padding: 1rem;
 }
 
-.contact-method {
-  display: flex;
-  align-items: end;
-  background-color: var(--vp-c-bg);
-  border-radius: 12px;
-  padding:15px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.contact-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--vp-c-bg-soft);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 1px solid var(--vp-c-divider);
 }
 
-.contact-method:hover {
+.contact-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.method-icon {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
-}
-
-.method-icon i {
-  font-size: 1.5rem;
-  color: white;
-}
-
-.method-info {
-  flex: 1;
-}
-
-.method-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--vp-c-text-1);
-}
-
-.method-info p {
-  font-size: 0.9rem;
-  color: var(--vp-c-text-2);
-  margin-bottom: 1rem;
-}
-
-.contact-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--vp-c-brand);
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.contact-link:hover {
-  color: var(--vp-c-brand-dark);
-}
-
-.contact-link i {
-  margin-left: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--vp-c-bg);
+  border: 2px solid var(--vp-c-brand);
   transition: transform 0.3s ease;
 }
 
-.contact-image {
-    flex: 1;
-    background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dlisto a');
-    background-size: cover;
-    background-position: center;
-  }
+.contact-card:hover .icon-wrapper {
+  transform: scale(1.1);
+}
 
-.contact-link:hover i {
+.icon-wrapper i {
+  font-size: 1.8rem;
+  color: var(--vp-c-brand);
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.8rem;
+}
+
+.card-content p {
+  color: var(--vp-c-text-1);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background: var(--vp-c-brand);
+  color: var(--vp-c-bg);
+}
+
+.contact-button:hover {
+  background: var(--vp-c-brand-dark);
   transform: translateX(5px);
 }
 
+.contact-button i {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-button:hover i {
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .contact-methods {
-    grid-template-columns: 1fr;
+  .contact-container {
+    padding: 2rem 1rem;
   }
 
-  .contact-method {
-    padding: 1.25rem;
+  .title {
+    font-size: 2rem;
   }
 
-  .method-icon {
-    width: 40px;
-    height: 40px;
+  .subtitle {
+    font-size: 1rem;
   }
 
-  .method-icon i {
-    font-size: 1.25rem;
+  .contact-grid {
+    gap: 1.5rem;
   }
 
-  .method-info h3 {
-    font-size: 1.1rem;
-  }
-
-  .method-info p {
-    font-size: 0.85rem;
+  .card-content {
+    padding: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
-  .contact-method {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+/* Dark mode enhancements */
+:root.dark .contact-card {
+  background: var(--vp-c-bg-soft);
+}
 
-  .method-icon {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
+:root.dark .icon-wrapper {
+  background: var(--vp-c-bg-mute);
+}
+
+:root.dark .contact-button {
+  background: var(--vp-c-brand);
+}
+
+:root.dark .contact-button:hover {
+  background: var(--vp-c-brand-dark);
 }
 </style>

@@ -80,6 +80,7 @@ const techStacks = {
   font-size: 2.5rem;
   color: var(--vp-c-brand);
   text-align: center;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: var(--vp-c-text-1);
 }

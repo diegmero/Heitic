@@ -62,7 +62,7 @@
     text-align: center;
     color: var(--vp-c-text-1);
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 3rem;
   }
   
