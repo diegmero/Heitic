@@ -1,6 +1,5 @@
-// .vitepress/theme/components/TestimonialSlider.vue
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 interface Testimonial {
   id: number
@@ -17,7 +16,7 @@ const testimonials: Testimonial[] = [
     name: 'Ana Martínez',
     company: 'TechCorp',
     role: 'CTO',
-    image: '/api/placeholder/80/80',
+    image: 'https://w7.pngwing.com/pngs/364/52/png-transparent-avatar-girl-person-user-woman-avatar-vol-1-icon.png',
     quote: 'Heitic transformó completamente nuestra infraestructura tecnológica. Su equipo demostró un nivel excepcional de profesionalismo y expertise.'
   },
   {
@@ -25,16 +24,16 @@ const testimonials: Testimonial[] = [
     name: 'Carlos Rodriguez',
     company: 'InnovaSoft',
     role: 'CEO',
-    quote: 'La consultoría estratégica de Heitic nos ayudó a optimizar nuestros procesos y reducir costos operativos en un 40%.',
-    image: '/api/placeholder/80/80'
+    quote: 'La consultoría estratégica de Heitic nos ayudó a optimizar nuestros procesos y reducir costos operativos en un 40%, me encantó y aún continuamos.',
+    image: 'https://www.creativefabrica.com/wp-content/uploads/2023/01/30/Bearded-Man-Avatar-Icon-Graphics-59392089-1.jpg'
   },
   {
     id: 3,
     name: 'Laura Sánchez',
     company: 'DataPro',
     role: 'Director de Operaciones',
-    quote: 'Su solución de analytics nos permitió tomar decisiones basadas en datos que impulsaron nuestro crecimiento.',
-    image: '/api/placeholder/80/80'
+    quote: 'Su solución de analytics nos permitió tomar decisiones basadas en datos que impulsaron nuestro crecimiento ya que se realizó transformación digital.',
+    image: 'https://img.favpng.com/19/23/8/businessperson-avatar-woman-png-favpng-iEUYrF6jymp6RPPizhu2jUUA7.jpg'
   }
 ]
 
@@ -63,6 +62,10 @@ const stopAutoPlay = () => {
 onMounted(() => {
   startAutoPlay()
 })
+
+onUnmounted(() => {
+  stopAutoPlay()
+})
 </script>
 
 <template>
@@ -72,43 +75,48 @@ onMounted(() => {
     @mouseleave="startAutoPlay"
   >
     <div class="testimonial-container">
-      <div 
-        class="testimonial"
-        v-for="(testimonial, index) in testimonials"
-        :key="testimonial.id"
-        :class="{ active: index === currentIndex }"
-      >
-        <div class="testimonial-content">
-          <div class="quote-icon">❝</div>
-          <p class="quote">{{ testimonial.quote }}</p>
-          <div class="author-info">
-            <img 
-              :src="testimonial.image" 
-              :alt="testimonial.name"
-              class="author-image"
-            />
-            <div class="author-details">
-              <strong class="author-name">{{ testimonial.name }}</strong>
-              <span class="author-role">{{ testimonial.role }}</span>
-              <span class="author-company">{{ testimonial.company }}</span>
+      <div class="image-column">
+        <img src="https://lh4.googleusercontent.com/kwReoruMMLhs9AXiSLQt2Ga3TFhbz9Txb78M-_tfXLTGJwr_iCXwPO7QgiYq7NzcB0KbJ9wZCiTPVMn1AgfLQXHgoJ-eeo-P3dhnfW-EBulAOFubKWpARzEyduxCzi-iZll17ryV" alt="Testimonial Image" class="testimonial-image">
+      </div>
+      <div class="content-column">
+        <div 
+          class="testimonial"
+          v-for="(testimonial, index) in testimonials"
+          :key="testimonial.id"
+          :class="{ active: index === currentIndex }"
+        >
+          <div class="testimonial-content">
+            <div class="quote-icon">❝</div>
+            <p class="quote">{{ testimonial.quote }}</p>
+            <div class="author-info">
+              <img 
+                :src="testimonial.image" 
+                :alt="testimonial.name"
+                class="author-image"
+              />
+              <div class="author-details">
+                <strong class="author-name">{{ testimonial.name }}</strong>
+                <span class="author-role">{{ testimonial.role }}</span>
+                <span class="author-company">{{ testimonial.company }}</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="controls">
-      <button @click="prevTestimonial" class="control-button">←</button>
-      <div class="dots">
-        <button 
-          v-for="(_, index) in testimonials" 
-          :key="index"
-          @click="currentIndex = index"
-          :class="{ active: index === currentIndex }"
-          class="dot-button"
-        />
+        <div class="controls">
+          <button @click="prevTestimonial" class="control-button">←</button>
+          <div class="dots">
+            <button 
+              v-for="(_, index) in testimonials" 
+              :key="index"
+              @click="currentIndex = index"
+              :class="{ active: index === currentIndex }"
+              class="dot-button"
+            />
+          </div>
+          <button @click="nextTestimonial" class="control-button">→</button>
+        </div>
       </div>
-      <button @click="nextTestimonial" class="control-button">→</button>
     </div>
   </div>
 </template>
@@ -116,24 +124,40 @@ onMounted(() => {
 <style scoped>
 .testimonial-slider {
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
   margin: 2rem auto;
-  padding: 2rem;
   background-color: var(--vp-c-bg-soft);
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .testimonial-container {
-  position: relative;
-  min-height: 300px;
+  display: flex;
+  min-height: 100%;
+}
+
+.image-column {
+  flex: 1;
+  overflow: hidden;
+}
+
+.testimonial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-column {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testimonial {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   opacity: 0;
   transform: translateX(20px);
   transition: all 0.5s ease-in-out;
@@ -141,13 +165,14 @@ onMounted(() => {
 }
 
 .testimonial.active {
+  position: relative;
   opacity: 1;
   transform: translateX(0);
   visibility: visible;
 }
 
 .testimonial-content {
-  text-align: center;
+  text-align: left;
 }
 
 .quote-icon {
@@ -167,7 +192,6 @@ onMounted(() => {
 .author-info {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
 
@@ -200,7 +224,7 @@ onMounted(() => {
 .controls {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -219,9 +243,6 @@ onMounted(() => {
   transition: background-color 0.3s;
 }
 
-.control-button:hover {
-  background: var(--vp-c-brand-dark);
-}
 
 .dots {
   display: flex;
@@ -244,17 +265,29 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
-  .testimonial-slider {
+  .testimonial-container {
+    flex-direction: column;
+  }
+
+  .image-column {
+    height: 200px;
+  }
+
+  .content-column {
     padding: 1rem;
   }
-  
+
   .quote {
     font-size: 1rem;
   }
-  
+
   .author-image {
     width: 50px;
     height: 50px;
+  }
+
+  .controls {
+    justify-content: center;
   }
 }
 </style>

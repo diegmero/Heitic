@@ -1,6 +1,15 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  head: [
+    [
+    'link',
+    {
+      rel: 'stylesheet',
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'
+    }
+  ],
+  ],
   title: "Heitic | Docs",
   description: "A VitePress Site",
   themeConfig: {
@@ -117,20 +126,16 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/vuejs-vitepress/' }
-    ]
+    ],
   },
-  markdown: {
-    headers: {
-      level: [0, 0]
-    },
-    // Habilita containers personalizados
-    container: {
-      tipLabel: 'Consejo',
-      warningLabel: 'Advertencia',
-      dangerLabel: 'Peligro',
-      infoLabel: 'Información'
+    vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag.includes('-')
+      }
     }
-}})
+  }
+})
 
 
 
