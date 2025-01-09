@@ -118,8 +118,19 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/vuejs-vitepress/' }
     ]
-  }
-})
+  },
+  markdown: {
+    headers: {
+      level: [0, 0]
+    },
+    // Habilita containers personalizados
+    container: {
+      tipLabel: 'Consejo',
+      warningLabel: 'Advertencia',
+      dangerLabel: 'Peligro',
+      infoLabel: 'Información'
+    }
+}})
 
 
 
