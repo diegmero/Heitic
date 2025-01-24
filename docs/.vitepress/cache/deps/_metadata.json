@@ -1,31 +1,49 @@
 {
-  "hash": "65940dd3",
+  "hash": "6d26bbdc",
   "configHash": "d97cb502",
-  "lockfileHash": "48dbebd6",
-  "browserHash": "b4cf4ca4",
+  "lockfileHash": "f9ee683c",
+  "browserHash": "5e83b357",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "67f75820",
+      "fileHash": "6c5d5dd4",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "0b57f597",
+      "fileHash": "a3b3f097",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "c3226bbd",
+      "fileHash": "94d42d8e",
+      "needsInterop": false
+    },
+    "react-icons/fa": {
+      "src": "../../../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "241478a9",
+      "needsInterop": false
+    },
+    "react-icons/si": {
+      "src": "../../../../node_modules/react-icons/si/index.mjs",
+      "file": "react-icons_si.js",
+      "fileHash": "dc3ea83b",
       "needsInterop": false
     }
   },
   "chunks": {
+    "chunk-YS7XZVPQ": {
+      "file": "chunk-YS7XZVPQ.js"
+    },
     "chunk-LW4I4DCF": {
       "file": "chunk-LW4I4DCF.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
     }
   }
 }

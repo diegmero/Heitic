@@ -8,7 +8,7 @@ import TestimonialSlider from './components/TestimonialSlider.vue'
 import WhyChooseUs from './components/WhyChooseUs.vue'
 import ContactUs from './components/ContactUs.vue'
 import Layout from './Layout.vue'
-import Copyright from './components/Copyright.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   extends: DefaultTheme,
@@ -19,6 +19,6 @@ export default {
     app.component('TestimonialSlider', TestimonialSlider)
     app.component('WhyChooseUs', WhyChooseUs)
     app.component('ContactUs', ContactUs)
-    app.component('Copyright', Copyright)
+    app.component('Footer', Footer)
   }
 } satisfies Theme

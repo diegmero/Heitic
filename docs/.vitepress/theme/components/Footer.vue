@@ -35,6 +35,9 @@
         </div>
       </div>
     </footer>
+    <div class="copy">
+        <p class="copy-text">Copyright 2025 Heitic - Desarrollado por Diego Romero</p>
+      </div>
   </template>
   
   <script setup lang="ts">
@@ -51,6 +54,7 @@
     padding: 2rem 0;
     font-size: 0.9rem;
     width: 100%;
+    border-radius: 20px;
   }
   
   .footer-content {
@@ -65,7 +69,6 @@
   .footer-section {
     flex: 1;
     min-width: 200px;
-    margin-bottom: 1rem;
   }
   
   .footer-section h3 {
@@ -155,5 +158,13 @@
     .footer-section {
       margin-bottom: 2rem;
     }
+  }
+
+  .copy {
+    display: flex;
+    color: var(--vp-c-text-2);
+    justify-content: center;
+    align-items: end;
+    margin-top: 1rem;
   }
   </style>

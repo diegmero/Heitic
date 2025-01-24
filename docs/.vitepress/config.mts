@@ -13,9 +13,10 @@ export default defineConfig({
   title: "Heitic | Docs",
   description: "A VitePress Site",
   themeConfig: {
+    logo: "https://img.icons8.com/?size=100&id=NkdlSUR5LFuw&format=png&color=000000",
     siteTitle: 'Heitic',
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Inicio', link: '/' },
       {
         text: 'Desarrollo',
         items: [
@@ -28,12 +29,9 @@ export default defineConfig({
         text: 'Operaciones',
         items: [
           { text: 'Infraestructura', link: '/operations/docker' },
-          { text: 'Contenedores', link: '/operations/kubernetes' },
-          { text: 'CI/CD', link: '/operations/git' },
-          { text: 'Testing', link: '/operations/testing' },
-          { text: 'Monitoring', link: '/operations/monitoring' },
+          { text: 'Docker', link: '/operations/docker' },
         ]
-      },
+      },/*
       {
         text: 'Seguridad',
           items: [
@@ -57,13 +55,12 @@ export default defineConfig({
             { text: 'Data Science', link: '/data/design' },
             { text: 'Data Engineering', link: '/data/deployment' },
           ]
-      },
+      },*/
       {
         text: 'Metodologías',
           items: [
-            { text: 'Agile', link: '/methodology/scrum' },
-            { text: 'DevOps Culture', link: '/methodology/kanban' },
-            { text: 'Quality Assurance', link: '/methodology/waterfall' },
+            { text: 'SRE', link: '/methodology/sre' },
+            { text: 'DevOps', link: '/methodology/devops' },
           ]
       },
       {

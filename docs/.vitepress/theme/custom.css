@@ -3,17 +3,21 @@
     --vp-c-brand-1: #00a2ff;   /* Color texto menú */
     --vp-button-brand-bg: #002d61;   /* fondo de color de boton hero */
     --vp-c-brand-2: #00a2ff;   /* Hover al boton Hero 2 */
-    --vp-home-hero-name-color: #00a2ff;
+    --vp-home-hero-name-color: #00a2ff; /* titulo heitic en hero*/
+    --vp-button-alt-hover-bg: #002d61; /* fondo de color hover para los botones 2 y 3 del hero */
+    --vp-button-alt-hover-text: #ffffff; /* color hover del texto para los botones 2 y 3 */
+    margin: 0 auto;
   }
   
 .dark {
     --vp-c-brand: #00a2ff;     /* Color principal para modo oscuro */
-    --vp-c-brand-1: #00a2ff;   /* Color Heitic y texto menú */
-    --vp-c-brand-2: #0080ca;   /* Variante 2 */
+    --vp-c-brand-1: #00a2ff;   /* Color texto menú */
     --vp-button-brand-bg: #00a2ff;  /* color de fondo botón hero*/
-    --vp-button-brand-hover-bg: #40b9ff; /* color de hover para el boton hero*/
     --vp-button-brand-text: #1b1b1f; /* color para el texto del botón hero*/
+    --vp-button-brand-hover-bg: #008cff; /* color de hover para el boton hero*/
     --vp-button-brand-hover-text: #1b1b1f; /* color de hover para el texto del botón hero*/
+    --vp-button-alt-hover-bg: #00a2ff; /* fondo de color hover para los botones 2 y 3 del hero */
+    --vp-button-alt-hover-text: #1b1b1f; /* color hover del texto para los botones 2 y 3 */
 }
 
 @media (min-width: 40px) {
@@ -21,4 +25,8 @@
         max-width: 700px;
         max-height: 256px;
     }
+}
+
+.VPHome{
+    margin-bottom: 0 !important;
 }

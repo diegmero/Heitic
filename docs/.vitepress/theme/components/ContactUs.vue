@@ -56,8 +56,9 @@ const contactMethods = [
 
 <style scoped>
 .contact-container {
-  padding: 4rem 1rem;
+  padding: 4rem 0rem;
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -81,8 +82,7 @@ const contactMethods = [
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+  gap: 4rem;
 }
 
 .contact-card {
