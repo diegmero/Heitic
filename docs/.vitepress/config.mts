@@ -1,3 +1,4 @@
+import { MdOutlineTitle } from 'react-icons/md'
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
   themeConfig: {
     logo: "https://img.icons8.com/?size=100&id=NkdlSUR5LFuw&format=png&color=000000",
     siteTitle: 'Heitic',
+    outlineTitle: 'Contendo', // Cambia el texto aquí
     nav: [
       { text: 'Inicio', link: '/' },
       {
@@ -29,7 +31,7 @@ export default defineConfig({
         text: 'Operaciones',
         items: [
           { text: 'Infraestructura', link: '/operations/docker' },
-          { text: 'Contenedores', link: '/operaciones/docker/docker' },
+          { text: 'Contenedores', link: '/operaciones/contenedores/info' },
         ]
       },/*
       {
@@ -118,16 +120,23 @@ export default defineConfig({
           ]
         }
       ],
-      '/operaciones/docker': [
+      /* PESTAÑA CONTENEDORES */
+      '/operaciones/contenedores': [
         {
           text: 'Contenedores',
           items: [
             { text: 'Docker',
               collapsed: true,
                 items: [
-                  { text: 'Instalación', link: '/operaciones/docker/docker' },
-                  { text: 'Configuraciones', link: '/operaciones/docker/configuracion' },
-
+                  { text: 'Instalación', link: '/operaciones/contenedores/docker/instalacion' },
+                  { text: 'Comandos', link: '/operaciones/contenedores/docker/comandos' },
+                  { text: 'Configuraciones', 
+                    collapsed: true,
+                      items: [
+                        {text: 'Configurar Logs', link: '/operaciones/contenedores/docker/configuraciones/logs'},
+                        {text: 'Limitar Recursos', link: '/operaciones/contenedores/docker/configuraciones/recursos'},
+                      ]
+                     },
                 ]
               },
               { text: 'Docker Compose',
@@ -159,6 +168,7 @@ export default defineConfig({
     }
   }
 })
+
 
 
 

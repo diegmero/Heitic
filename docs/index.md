@@ -13,11 +13,8 @@ hero:
       text: Consultoría Gratuita
       link: /contact
     - theme: alt
-      text: Portafolio
-      link: /portfolio
-    - theme: alt
       text: Documentación
-      link: /docs
+      link: /operaciones/contenedores/docker/instalacion
 
 features:
   - icon: 🚀
