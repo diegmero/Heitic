@@ -1,0 +1,24 @@
+:root {
+    --vp-c-brand: #034a74;     /* Color principal para modo claro */
+    --vp-c-brand-1: #00a2ff;   /* Color texto menú */
+    --vp-button-brand-bg: #002d61;   /* fondo de color de boton hero */
+    --vp-c-brand-2: #00a2ff;   /* Hover al boton Hero 2 */
+    --vp-home-hero-name-color: #00a2ff;
+  }
+  
+.dark {
+    --vp-c-brand: #00a2ff;     /* Color principal para modo oscuro */
+    --vp-c-brand-1: #00a2ff;   /* Color Heitic y texto menú */
+    --vp-c-brand-2: #0080ca;   /* Variante 2 */
+    --vp-button-brand-bg: #00a2ff;  /* color de fondo botón hero*/
+    --vp-button-brand-hover-bg: #40b9ff; /* color de hover para el boton hero*/
+    --vp-button-brand-text: #1b1b1f; /* color para el texto del botón hero*/
+    --vp-button-brand-hover-text: #1b1b1f; /* color de hover para el texto del botón hero*/
+}
+
+@media (min-width: 40px) {
+    [data-v-72cc4481] .image-src {
+        max-width: 700px;
+        max-height: 256px;
+    }
+}

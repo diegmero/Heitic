@@ -1,7 +1,7 @@
 <template>
     <Layout>
       <template #layout-bottom>
-        <!-- Reemplazamos el footer de VitePress con nuestro componente Footer -->
+        <!-- Reemplazo el footer de VitePress con componente Footer -->
         <Footer />
       </template>
     </Layout>

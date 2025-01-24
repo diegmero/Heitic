@@ -6,7 +6,7 @@ hero:
   text: "Soluciones Digitales"
   tagline: Excelencia en TI para un crecimiento sostenible
   image:
-    src: https://img.freepik.com/vector-gratis/desarrollo-aplicaciones-escritorio-telefonos-inteligentes_23-2148683810.jpg?t=st=1736443699~exp=1736447299~hmac=b2812b854094202debfdd4c58f1a56be3c7659ac0f8b459c112737059bd42623&w=1380
+    src: /publilc/images/yo.png
     alt: Heitic
   actions:
     - theme: brand

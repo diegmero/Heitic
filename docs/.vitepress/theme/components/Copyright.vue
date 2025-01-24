@@ -14,8 +14,8 @@
   
   <style module>
   .copyright {
-    background-color: var(--vp-c-brand);
-    color: var(--vp-c-bg);
+    background-color: var(--vp-c-bg);
+    color: var(alt);
   }
   
   .copyrightContent {
