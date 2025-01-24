@@ -163,6 +163,7 @@
   .copy {
     display: flex;
     color: var(--vp-c-text-2);
+    text-align: center;
     justify-content: center;
     align-items: end;
     margin-top: 1rem;
