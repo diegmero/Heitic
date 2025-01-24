@@ -6,7 +6,7 @@ hero:
   text: "Soluciones Digitales"
   tagline: Excelencia en TI para un crecimiento sostenible
   image:
-    src: /publilc/images/yo.png
+    src: https://usc1.contabostorage.com/c6cbf9b7039e436cbe1253c0ae4e98e4:granapple/Pagina web/Logos/yo.png
     alt: Heitic
   actions:
     - theme: brand
