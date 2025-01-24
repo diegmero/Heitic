@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 
 const logos = ref([
-  { id: 1, name: 'Cliente 1', image: 'https://res.cloudinary.com/dmrtnmeej/image/upload/v1732113577/Group_yfekee.png' },
-  { id: 2, name: 'Cliente 2', image: 'https://www.transvalvanera.com/wp-content/uploads/2023/03/Logotipo-home.png' },
+  { id: 1, name: 'Cliente 1', image: '' },
+  { id: 2, name: 'Cliente 2', image: 'https://www.transvalvanera.com/wp-content/uploads/2024/06/Logotipo-home-2.png' },
   { id: 3, name: 'Cliente 3', image: 'https://o4si.com/wp-content/uploads/2024/08/Logo-en-blanco1.png' },
   { id: 4, name: 'Cliente 4', image: 'https://www.glassdrive.es/sites/d10-glassdrive.es/files/styles/text_image_1200w/public/images/logo%20largo%20%281%29.png?itok=I_gEEtfJ' },
   { id: 5, name: 'Cliente 5', image: 'https://o4ti.com/wp-content/uploads/2024/07/Logo-a-color-.png' },
@@ -17,7 +17,7 @@ const logos = ref([
 <template>
   <div class="logo-carousel">
     <div class="container">
-      <h2 class="carousel-title">Empresas que confían en nosotros</h2>
+      <h2 class="carousel-title">Empresas que han confiado</h2>
       <div class="logo-container">
         <div class="logo-scroll">
           <div v-for="logo in [...logos, ...logos]" :key="logo.id" class="logo-item">
@@ -38,6 +38,11 @@ const logos = ref([
   padding: 2rem 0;
   background-color: var(--vp-c-bg-soft);
   overflow: hidden;
+  border-radius: 20px;
+}
+
+.vp-doc h2{
+  border-top: 0;margin-top: 0;
 }
 
 .container {
@@ -74,7 +79,7 @@ const logos = ref([
   height: 3rem;
   width: auto;
   filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.9;
   transition: all 0.3s ease;
 }
 

@@ -87,9 +87,14 @@ const techStacks = {
   overflow: hidden;
 }
 
+.vp-doc h2 {
+  border-top: 0;
+  margin-top: 4rem;
+}
+
 .tech-stack-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .tech-stack-title {

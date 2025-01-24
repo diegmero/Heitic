@@ -147,7 +147,7 @@
   }
   
   .newsletter-form button:hover {
-    background-color: var(--vp-c-brand-dark);
+    background-color: var(--vp-c-brand-1);
   }
   
   @media (max-width: 768px) {

@@ -62,6 +62,11 @@ const contactMethods = [
   margin: 0 auto;
 }
 
+.vp-doc h2 {
+  border-top: 0;
+  margin-top: 0;
+}
+
 .contact-header {
   text-align: center;
   margin-bottom: 3rem;

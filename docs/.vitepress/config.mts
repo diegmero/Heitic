@@ -29,7 +29,7 @@ export default defineConfig({
         text: 'Operaciones',
         items: [
           { text: 'Infraestructura', link: '/operations/docker' },
-          { text: 'Docker', link: '/operations/docker' },
+          { text: 'Contenedores', link: '/operaciones/docker/docker' },
         ]
       },/*
       {
@@ -115,6 +115,32 @@ export default defineConfig({
           items: [
             { text: 'API Examples', link: '/backend/api' },
             { text: 'Database Examples', link: '/backend/database' },
+          ]
+        }
+      ],
+      '/operaciones/docker': [
+        {
+          text: 'Contenedores',
+          items: [
+            { text: 'Docker',
+              collapsed: true,
+                items: [
+                  { text: 'Instalación', link: '/operaciones/docker/docker' },
+                  { text: 'Configuraciones', link: '/operaciones/docker/configuracion' },
+
+                ]
+              },
+              { text: 'Docker Compose',
+                collapsed: true,
+                  items: [
+                    { text: 'Instalación', link: '/operaciones/docker-compose/instalacion' },
+                    { text: 'Configuraciones', link: '/operaciones/docker-compose/configuracion' },
+  
+                  ]
+                },
+            { text: 'Docker Swarm', link: '/operaciones/docker-swarm' },
+            { text: 'Kubernets', link: '/operaciones/kubernets' },
+              
           ]
         }
       ]
